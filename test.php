@@ -1,4 +1,6 @@
 <?php
+define('STDIN',fopen("php://stdin","r"));
+
 $entityBody = stream_get_contents(STDIN);
 
 echo $entityBody;
