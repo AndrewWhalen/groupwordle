@@ -2,7 +2,11 @@
 
 $entityBody = file_get_contents('php://input');
 
-echo $entityBody == "afdasfd";
+if ($entityBody == "") {
+    echo "True"
+} else{
+    echo "False"
+}
 $file = 'people.txt';
 
 // Open the file to get existing content
