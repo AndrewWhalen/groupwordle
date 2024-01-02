@@ -40,7 +40,6 @@
             font-size: 4vh;
             color: black; 
             text-transform: uppercase;
-            margin: 0.2%;
         }
         button.green {
             background: #6aaa64;
@@ -92,7 +91,7 @@
 
         function colorRow(trueWord) {
             guess = readWord();
-            targetLetters = trueWord.split("");
+            targetLetters = trueWord.toLowerCase().split("");
 
             // color greens first
             for (let i = 0; i < 5; i++) { 
@@ -118,7 +117,7 @@
         function colorLetters() {
             keys = document.getElementsByClassName("key");
             for (let key of keys) {
-                keyText = key.innerText;
+                keyText = key.innerText.toLowerCase();
                 console.log(keyText)
                 if(greenLetters.includes(keyText)) {
                     key.className = "key green";
