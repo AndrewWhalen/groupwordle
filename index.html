@@ -1,0 +1,176 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<style>
+		div.card {
+		    margin-top: 2mm;
+		    margin-bottom: 2mm;
+		    margin-left: 2mm;
+		    margin-right: 2mm;
+		    display: inline-table; 
+			border:2px solid black; 
+		}
+
+		h1  {
+		    color: blue; 
+		    text-align: center;
+		    margin-top: 10px;
+		    margin-bottom: 10px;
+		}
+		h2  {
+		    color: blue; 
+		    text-align: center;  
+		    font-style: italic; 
+		    margin-top: 10px;
+		    margin-bottom: 10px;
+		}
+		hr  {width:80%; }
+		p {
+		    margin-top: 3px;
+		    margin-bottom: 3px;
+		}
+		
+		p.description {
+		    margin-left: 10px;
+		    margin-right: 10px;
+		}
+
+		/*Monster styles*/
+		table.monstertable {
+		    table-layout: fixed;
+		    width: 90%;
+		    text-align: center;
+		    font-size: 30px;
+		}
+		div.specialtext{
+		    font-size: 18px;
+		}    
+
+		/*Player Styles*/
+
+		table.healthsquares {
+		    position: absolute;
+		    left: 4%;
+		    bottom: 75%;
+		    table-layout: fixed;
+		    text-align: center;
+		    float: left;
+		    font-size: 24px;
+		}
+		table.shieldsquares {
+		    position: absolute;
+		    left: 86%;
+		    bottom: 75%;
+		    table-layout: fixed;
+		    text-align: center;
+		    float: left;
+		    font-size: 24px;
+		}
+		tr.playerorder {
+		    height:40px;
+		    border:2px solid #000000;
+
+		}
+		td.playerorder {
+		    height:40px;
+		    width:40px;
+		    border:2px solid #000000;
+
+		}
+		table.description_table {
+		    margin-top: 3px;
+		    margin-bottom: 3px;
+		}
+
+		td.description_left {
+		    vertical-align: top;
+		    text-align: right;
+		    white-space: nowrap;
+		}
+		td.description_right {
+		    vertical-align: top;
+		    text-align: left;
+
+		}
+		img.tableimage {
+		    width:40px;
+		    height:40px;
+		}
+		div.specialtext{
+		    font-size: 18px;
+		}    
+	</style>
+</head>
+<body>
+<div id="cards">
+
+<!-- TREASURE CARDS -->
+	<div id="treasure" class="card" style="width:66mm; height:88mm; ">
+	    <h1 id="name">Vial of Empowerment</h1>
+	    <h2 id="treasure_class">Dwarven Cleric</h2>
+	    <hr>
+	    <p class="description" id="description">
+	        You may heal past your maximum health. Healing above your maximum health is half as effective (rounded up).
+	    </p>
+	</div> 
+
+<!-- MONSTER CARDS -->
+
+	<div id="monster" class="card" style="width:450px; height:400px; ">
+	    <h1 id="name">Floor 1: Undead</h1>
+
+	    <table class="monstertable">
+	        <tr id="monstertable">
+	            <td> </td>
+	        </tr>
+	        <tr id="monsterhealthtable">
+	            <td> </td>
+	        </tr>        
+	        <tr id="monsterattacktable">
+	            <td> </td>
+	        </tr>
+
+	    </table>
+
+	    <hr>
+
+		<h1> Special </h1>
+		<div id="specialtext" class="specialtext"></div>
+
+		</p>
+	</div> 
+
+
+<!-- PLAYER CARD -->
+	<div id="player"  class="card" style="width:900px; height:300px; position: relative;">
+    <div style="display:inline">
+        <table class="healthsquares">
+            <tr> <td colspan="4"> <span id="health"> Health: </span><td></tr>
+            <tr ><td></td><td class="playerorder"></td><td class="playerorder"> </td><td></td></tr>
+        </table>
+
+        <table class="shieldsquares">
+            <tr> <td colspan="3">Shield<td></tr>
+            <tr ><td></td><td class="playerorder"> </td><td></td></tr>
+        </table>
+
+    </div>
+
+    <br>
+    <div>
+    	<h1 id="name" style="font-size:40px; line-height: 0.0">Halfling Wizard</h1>
+	</div>
+    <br>
+    <br>
+    <hr>
+    <div id='description'>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis porta odio. Duis sodales tellus vitae euismod laoreet. Donec ultrices maximus finibus. Sed cursus, libero sed viverra lobortis, nibh elit finibus elit, sit amet sodales nisl dolor in eros. Aliquam erat volutpat. Mauris at dictum orci. Morbi a ullamcorper lectus. Nulla facilisi.</td>
+	</div>
+	</div> 
+
+
+
+</div>
+</body>
+</html> 
