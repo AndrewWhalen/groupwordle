@@ -1,9 +1,3 @@
-<html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
-
 <?php
 echo '<p>Hello World</p>';
 $file = 'people.txt';
@@ -13,7 +7,4 @@ $current = file_get_contents($file);
 $current .= "John Smith\n";
 // Write the contents back to the file
 file_put_contents($file, $current);
-
 ?>
- </body>
-</html>
