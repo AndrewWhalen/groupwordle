@@ -38,7 +38,7 @@
             border-radius: 5%;
             padding: 0;
             font-size: 4vh;
-            ; color: black; 
+            color: black; 
             text-transform: uppercase;
         }
         button.green {
@@ -186,6 +186,7 @@
         function putWord() {
             if (current_row == 1 && current_letter == 6) {
                 var xmlHttp = new XMLHttpRequest();
+                console.log("Sending request")
                 xmlHttp.open( "PUT", "test.php", false ); // false for synchronous request
                 xmlHttp.send(readWord());
                 console.log(xmlHttp.responseText);
