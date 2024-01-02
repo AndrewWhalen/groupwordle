@@ -2,7 +2,7 @@
 
 $entityBody = file_get_contents('php://input');
 
-echo $entityBody;
+echo $entityBody == "";
 $file = 'people.txt';
 
 // Open the file to get existing content
