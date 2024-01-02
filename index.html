@@ -109,6 +109,24 @@
 
         }
 
+        function restart() {
+            current_row = 1;
+            current_letter = 1;
+
+            greenLetters = [];
+            orangeLetters = [];
+            greyLetters = [];
+            for (let key of document.getElementsByClassName("key")) {
+                key.className = "key"
+            }
+
+            for (let key of document.getElementsByClassName("tile")) {
+                key.className = "tile"
+                key.innerText = ""
+            }
+
+        }
+
         function colorGreen(element) {
             element.class = 'tile green';
         }
