@@ -7,9 +7,9 @@
     <script>
     	function update() {
             var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", "test.php", false ); // false for synchronous request
+            xmlHttp.open( "PUT", "test.php", false ); // false for synchronous request
             xmlHttp.send( "asdklfjfjlsadk" );
-    		document.getElementById("output").innerText =xmlHttp.responseText;
+    		document.getElementById("output").innerText = xmlHttp.responseText;
     	}
     </script>
 
