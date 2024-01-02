@@ -23,10 +23,23 @@
             height: 10%;
             width: 7%;
         }
+        button.green {
+            background: green;
+        }
+        button.orange {
+            background: orange;
+        }
+        button.grey {
+            background: grey;
+        }
 	</style>
     <script>
-        current_row = 1
-        current_letter = 1
+        current_row = 1;
+        current_letter = 1;
+        
+        greenLetters = [];
+        orangeLetters = [];
+        greyLetters = [];
 
         function update(letter){
             if(current_letter <= 5 && current_row <= 6){
@@ -50,6 +63,7 @@
                 colorRow(word);
                 current_row += 1
                 current_letter = 1
+                colorLetters();
             } else {
             }
         }
@@ -57,15 +71,13 @@
         function colorRow(trueWord) {
             guess = readWord();
             targetLetters = trueWord.split("");
-            console.log(guess)
 
             // color greens first
             for (let i = 0; i < 5; i++) { 
                 if(trueWord[i] == guess[i]){
-                    console.log(trueWord[i] + " " + guess[i]);
                     document.getElementById(current_row + "-" + (i+1)).className = "tile green";
-                    console.log(document.getElementById(current_row + "-" + (i+1)));
                     removeFirst(targetLetters, trueWord[i])
+                    greenLetters.push(guess[i]);
                 }
             }
             
@@ -74,6 +86,24 @@
                 if(trueWord[i] != guess[i] && targetLetters.includes(guess[i])){
                     document.getElementById(current_row + "-" + (i+1)).className = "tile orange";
                     removeFirst(targetLetters, guess[i])
+                    orangeLetters.push(guess[i]);
+                }
+                greyLetters.push(guess[i]);
+            }
+
+        }
+
+        function colorLetters() {
+            keys = document.getElementsByClassName("key");
+            for (let key of keys) {
+                keyText = key.innerText;
+                console.log(keyText)
+                if(greenLetters.includes(keyText)) {
+                    key.className = "key green";
+                } else if(orangeLetters.includes(keyText)) {
+                    key.className = "key orange";
+                } else if(greyLetters.includes(keyText)){
+                    key.className = "key grey";
                 }
             }
 
@@ -107,6 +137,7 @@
         }
 
         function getWord() {
+            return "utter";
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open( "GET", "test.php", false ); // false for synchronous request
             xmlHttp.send();
@@ -141,9 +172,9 @@
 <body style='height: 100%'>
 
 <table style='width:100%; height:60%; text-align: center;'>
-<tr><td class='tile' id='1-1'>a</td><td class='tile' id='1-2'>b</td><td class='tile' id='1-3'>c</td><td class='tile' id='1-4'></td><td class='tile' id='1-5'></td></tr>
-<tr><td class='tile' id='2-1'>c</td><td class='tile' id='2-2'></td><td class='tile' id='2-3'></td><td class='tile' id='2-4'></td><td class='tile' id='2-5'></td></tr>
-<tr><td class='tile' id='3-1'>d</td><td class='tile' id='3-2'></td><td class='tile' id='3-3'></td><td class='tile' id='3-4'></td><td class='tile' id='3-5'></td></tr>
+<tr><td class='tile' id='1-1'></td><td class='tile' id='1-2'></td><td class='tile' id='1-3'></td><td class='tile' id='1-4'></td><td class='tile' id='1-5'></td></tr>
+<tr><td class='tile' id='2-1'></td><td class='tile' id='2-2'></td><td class='tile' id='2-3'></td><td class='tile' id='2-4'></td><td class='tile' id='2-5'></td></tr>
+<tr><td class='tile' id='3-1'></td><td class='tile' id='3-2'></td><td class='tile' id='3-3'></td><td class='tile' id='3-4'></td><td class='tile' id='3-5'></td></tr>
 <tr><td class='tile' id='4-1'></td><td class='tile' id='4-2'></td><td class='tile' id='4-3'></td><td class='tile' id='4-4'></td><td class='tile' id='4-5'></td></tr>
 <tr><td class='tile' id='5-1'></td><td class='tile' id='5-2'></td><td class='tile' id='5-3'></td><td class='tile' id='5-4'></td><td class='tile' id='5-5'></td></tr>
 <tr><td class='tile' id='6-1'></td><td class='tile' id='6-2'></td><td class='tile' id='6-3'></td><td class='tile' id='6-4'></td><td class='tile' id='6-5'></td></tr>
