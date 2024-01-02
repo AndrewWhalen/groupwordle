@@ -21,7 +21,7 @@
         }
         div.keyrow {
             width: 100%;
-            height: 8%;
+            height: 5%;
             text-align:center;
             margin: 1%;
         }
@@ -203,10 +203,10 @@
 
 
 </head>
-<body style='height: 100%; width: 100%'>
+<body style='max-width: 100vw; width: 56.25vh; max-height: 177.78vw; height:100vh'>
 
 <div style = 'height: 60%; width: 100%; text-align: center;'>
-<table style='width:40%; height:100%; text-align: center; margin-left: auto; margin-right: auto;'>
+<table style='width:80%; height:100%; text-align: center; margin-left: auto; margin-right: auto;'>
 <tr><td class='tile' id='1-1'></td><td class='tile' id='1-2'></td><td class='tile' id='1-3'></td><td class='tile' id='1-4'></td><td class='tile' id='1-5'></td></tr>
 <tr><td class='tile' id='2-1'></td><td class='tile' id='2-2'></td><td class='tile' id='2-3'></td><td class='tile' id='2-4'></td><td class='tile' id='2-5'></td></tr>
 <tr><td class='tile' id='3-1'></td><td class='tile' id='3-2'></td><td class='tile' id='3-3'></td><td class='tile' id='3-4'></td><td class='tile' id='3-5'></td></tr>
@@ -249,10 +249,12 @@
 <button class='key' onclick="update('m')">m</button>
 </div>
 <div class='keyrow' id='row-4'>
-<button class='key' style='width: 14%' onclick="del()">Delete</button>
-<button class='key' style='width: 14%' onclick="enter()">Enter</button>
-<button class='key' style='width: 14%' onclick="restart()">Restart</button>
-<button class='key' style='width: 14%' onclick="putWord()">Set Word</button>
+<button class='key' style='width: 33%' onclick="del()">Delete</button>
+<button class='key' style='width: 33%' onclick="enter()">Enter</button>
+</div>
+<div class='keyrow' id='row-4'>
+<button class='key' style='width: 33%' onclick="restart()">Restart</button>
+<button class='key' style='width: 33%' onclick="putWord()">Set Word</button>
 </div>
 
 </body>
