@@ -3,9 +3,9 @@
 $entityBody = file_get_contents('php://input');
 
 if ($entityBody == "") {
-    echo "True"
-} else{
-    echo "False"
+    echo "True";
+} else {
+    echo "False";
 }
 $file = 'people.txt';
 
