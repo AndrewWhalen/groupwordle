@@ -184,7 +184,7 @@
         }
         
         function putWord() {
-            if (current_row == 1 && current_letter == 6) {
+            if (current_row == 1 && current_letter == 6 && getWordleList.includes(readWord())) {
                 var xmlHttp = new XMLHttpRequest();
                 console.log("Sending request")
                 xmlHttp.open( "PUT", "test.php", false ); // false for synchronous request
